@@ -1,0 +1,26 @@
+{
+  "name": "web-backend-development-ii-cse341",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denislazo1610/BackEndDevelopmentII.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denislazo1610/BackEndDevelopmentII/issues"
+  },
+  "homepage": "https://github.com/denislazo1610/BackEndDevelopmentII#readme",
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

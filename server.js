@@ -5,6 +5,10 @@ const connectDB = require("./DB/connection");
 
 connectDB();
 
+app.get("/", (req, res) => {
+  res.send(`Go to localhost:${port}/contacts`);
+});
+
 app.use("/", require("./routes"));
 
 app.listen(port, () => {

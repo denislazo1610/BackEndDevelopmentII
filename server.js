@@ -6,10 +6,12 @@ const connectDB = require("./DB/connection");
 connectDB();
 
 app.get("/", (req, res) => {
-  res.send(`Go to localhost:${port}/contacts`);
+  res.send(`Go to /contacts`);
 });
 
-app.use("/", require("./routes"));
+app
+  .use("/index", require("./routes/index"))
+  .use("/contacts", require("./routes/contacts"));
 
 app.listen(port, () => {
   console.log(`this is running on port ${port}`);

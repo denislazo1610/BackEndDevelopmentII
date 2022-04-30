@@ -1,5 +1,11 @@
 GET http://localhost:3000/contacts
 
 ###
-GET http://localhost:3000/contacts?id=626a30574b82aa37ecae1323
+GET http://localhost:3000/contacts/626a30574b82aa37ecae1323
 
+###
+
+GET https://backendcse.herokuapp.com/contacts
+
+###
+GET https://backendcse.herokuapp.com/contacts/626a309a4b82aa37ecae1324

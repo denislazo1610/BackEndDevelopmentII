@@ -46,14 +46,14 @@ POST https://backendcse.herokuapp.com/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Denis",
-    "lastName": "Lopez",
-    "email": "denis@gmail.com",
+    "firstName": "Pedro",
+    "lastName": "Susano",
+    "email": "Pedro@gmail.com",
     "favoriteColor": "Black",
     "birthday": "Unknown"
 }
 ###
-PUT https://backendcse.herokuapp.com/contacts/626a30d54b82aa37ecae1325 HTTP/1.1
+PUT https://backendcse.herokuapp.com/contacts/627375b7e0632714fcc99c1f HTTP/1.1
 content-type: application/json
 
 {
@@ -65,6 +65,6 @@ content-type: application/json
 }
 
 ###
-DELETE https://backendcse.herokuapp.com/contacts/6273171756898c4eb98a7811
+DELETE https://backendcse.herokuapp.com/contacts/627375b7e0632714fcc99c1f
 
 ###

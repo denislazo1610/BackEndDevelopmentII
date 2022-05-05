@@ -14,9 +14,7 @@ const gettingSingleContact = (req, res) => {
 };
 
 const deletingSingleContact = (req, res) => {
-  contact.findByIdAndDelete(req.params.id).then((result) => {
-    res.send(result);
-  });
+  contact.findByIdAndDelete(req.params.id);
 };
 
 const creatingNewContact = (req, res) => {

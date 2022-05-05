@@ -1,11 +1,70 @@
+# LOCAL 3000
 GET http://localhost:3000/contacts
 
 ###
-GET http://localhost:3000/contacts/626a30574b82aa37ecae1323
+GET http://localhost:3000/contacts/6273171756898c4eb98a7811
 
 ###
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Denis",
+    "lastName": "Lopez",
+    "email": "denis@gmail.com",
+    "favoriteColor": "Black",
+    "birthday": "Unknown"
+}
+
+###
+PUT http://localhost:3000/contacts/626a30d54b82aa37ecae1325 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Denis",
+    "lastName": "Lopez",
+    "email": "denis@gmail.com",
+    "favoriteColor": "Black",
+    "birthday": "Unknown"
+}
+
+###
+DELETE http://localhost:3000/contacts/6273171756898c4eb98a7811
+
+###
+
+# HEROKU 
 
 GET https://backendcse.herokuapp.com/contacts
 
 ###
 GET https://backendcse.herokuapp.com/contacts/626a309a4b82aa37ecae1324
+
+
+###
+POST https://backendcse.herokuapp.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Denis",
+    "lastName": "Lopez",
+    "email": "denis@gmail.com",
+    "favoriteColor": "Black",
+    "birthday": "Unknown"
+}
+###
+PUT https://backendcse.herokuapp.com/contacts/626a30d54b82aa37ecae1325 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Denis",
+    "lastName": "Lopez",
+    "email": "denis@gmail.com",
+    "favoriteColor": "Black",
+    "birthday": "Unknown"
+}
+
+###
+DELETE https://backendcse.herokuapp.com/contacts/6273171756898c4eb98a7811
+
+###

@@ -1,19 +1,20 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
 let contactSchema = new schema(
   {
-    // firstName: String,
-    // lastName: String,
-    // email: String,
-    // favoriteColor: String,
-    // birthday: String,
+    firstName: String,
+    lastName: String,
+    email: String,
+    favoriteColor: String,
+    birthday: String
   },
   {
-    collection: "contacts",
+    collection: 'contacts',
+    versionKey: false
   }
 );
 
-const contact = mongoose.model("contact", contactSchema);
+const contact = mongoose.model('contact', contactSchema);
 
 module.exports = contact;

@@ -1,4 +1,5 @@
 const express = require('express');
+const port = process.env.PORT || 3000;
 const router = express.Router();
 
 const {
@@ -18,5 +19,15 @@ router.delete('/:id', deletingSingleContact);
 router.post('/', creatingNewContact);
 
 router.put('/:id', updatingContact);
+
+router.use(
+  '/',
+  (docData = (req, res) => {
+    let docData = {
+      documentationURL: `https://${port}/contacts`
+    };
+    res.send(docData);
+  })
+);
 
 module.exports = router;

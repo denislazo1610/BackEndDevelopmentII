@@ -10,7 +10,7 @@ const {
   updatingContact
 } = require('../controller/contacts');
 
-router.get('/', gettingInfoContacts);
+router.get('/contacts/', gettingInfoContacts);
 
 router.get('/:id', gettingSingleContact);
 

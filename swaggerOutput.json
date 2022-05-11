@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://backendcse.herokuapp.com",
+  "host": "backendcse.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "https"

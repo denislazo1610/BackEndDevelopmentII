@@ -6,7 +6,7 @@ const doc = {
     title: 'My API',
     description: 'Description'
   },
-  host: `https://backendcse.herokuapp.com`,
+  host: `backendcse.herokuapp.com`,
   schemes: ['https']
 };
 

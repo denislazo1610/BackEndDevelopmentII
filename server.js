@@ -43,7 +43,6 @@ app
     );
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    next();
   });
 
 // .use('/contacts', require('./routes/contacts'));

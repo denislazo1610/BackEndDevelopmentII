@@ -7,11 +7,9 @@
   },
   "host": "backendcse.herokuapp.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
-    "/contacts/": {
+    "/contacts": {
       "get": {
         "description": "",
         "parameters": [],
@@ -52,7 +50,7 @@
         "responses": {}
       }
     },
-    "/{id}": {
+    "/contacts/{id}": {
       "get": {
         "description": "",
         "parameters": [

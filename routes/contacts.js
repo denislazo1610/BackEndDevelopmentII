@@ -10,13 +10,13 @@ const {
   updatingContact
 } = require('../controller/contacts');
 
-router.get('/contacts/', gettingInfoContacts);
+router.get('/', gettingInfoContacts);
 
 router.get('/:id', gettingSingleContact);
 
 router.delete('/:id', deletingSingleContact);
 
-router.post('/contacts/', creatingNewContact);
+router.post('/', creatingNewContact);
 
 router.put('/:id', updatingContact);
 

@@ -5,13 +5,11 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "backendcse.herokuapp.com",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["https"],
   "paths": {
-    "/": {
+    "/contacts/": {
       "get": {
         "description": "",
         "parameters": [],
@@ -56,7 +54,7 @@
         }
       }
     },
-    "/{id}": {
+    "/contacts/{id}": {
       "get": {
         "description": "",
         "parameters": [

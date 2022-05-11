@@ -6,8 +6,10 @@ const doc = {
     title: 'My API',
     description: 'Description'
   },
-  host: `backendcse.herokuapp.com`,
-  schemes: ['https']
+  // host: `backendcse.herokuapp.com`,
+  // schemes: ['https']
+  host: `localhost:3000`,
+  schemes: ['http']
 };
 
 const outputFile = './swaggerOutput.json';

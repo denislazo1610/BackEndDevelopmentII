@@ -16,15 +16,16 @@ var options = {
 };
 
 // For parsing application/json
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
-  );
-  res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-});
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.setHeader(
+//     'Access-Control-Allow-Headers',
+//     'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+//   );
+//   res.setHeader('Content-Type', 'application/json');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//   next();
+// });
 
 // app.get('/', (req, res) => {
 //   res.send(`${port}`);
@@ -33,6 +34,16 @@ app.use((req, res, next) => {
 app
   .use(bodyParser.json())
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options))
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+    );
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+  })
   .use('/', require('./routes/contacts'));
 // .use('/contacts', require('./routes/contacts'));
 

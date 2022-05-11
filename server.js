@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 app
   .use(bodyParser.json())
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options))
-  .use('/', require('./routes/index'));
+  .use('/', require('./routes/contacts'));
 // .use('/contacts', require('./routes/contacts'));
 
 app.listen(port, () => {

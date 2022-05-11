@@ -34,8 +34,8 @@ app.use((req, res, next) => {
 app
   .use(bodyParser.json())
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options))
-  // .use('/index', require('./routes/index'))
-  .use('/contacts', require('./routes/contacts'));
+  .use('/', require('./routes/index'));
+// .use('/contacts', require('./routes/contacts'));
 
 app.listen(port, () => {
   console.log(`this is running on port ${port}`);

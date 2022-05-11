@@ -34,6 +34,7 @@ var options = {
 app
   .use(bodyParser.json())
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options))
+  .use('/', require('./routes/contacts'))
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
@@ -43,8 +44,8 @@ app
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     next();
-  })
-  .use('/', require('./routes/contacts'));
+  });
+
 // .use('/contacts', require('./routes/contacts'));
 
 app.listen(port, () => {

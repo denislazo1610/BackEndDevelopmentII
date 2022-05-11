@@ -14,7 +14,12 @@ const gettingSingleContact = (req, res) => {
 };
 
 const deletingSingleContact = (req, res) => {
-  contact.findByIdAndDelete(req.params.id);
+  contact.findByIdAndDelete(req.params.id, function () {
+    console.log('deleted');
+    contact.find().then((result) => {
+      res.send(result);
+    });
+  });
 };
 
 const creatingNewContact = (req, res) => {
@@ -26,6 +31,7 @@ const creatingNewContact = (req, res) => {
     birthday: req.body.birthday
   };
   contact.insertMany(newContacto);
+  res.send(newContacto);
 };
 
 const updatingContact = (req, res) => {

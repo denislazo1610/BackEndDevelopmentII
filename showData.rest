@@ -9,7 +9,7 @@ POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Denis",
+    "firstName": "Prueba",
     "lastName": "Lopez",
     "email": "denis@gmail.com",
     "favoriteColor": "Black",
@@ -17,11 +17,11 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:3000/contacts/626a30d54b82aa37ecae1325 HTTP/1.1
+PUT http://localhost:3000/contacts/627bcc671291ec849bd24088 HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Denis super Awesome",
+    "firstName": "Test",
     "lastName": "Lopez",
     "email": "denis@gmail.com",
     "favoriteColor": "Black",
@@ -29,7 +29,7 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/contacts/6273171756898c4eb98a7811
+DELETE http://localhost:3000/contacts/627bcc671291ec849bd24088
 
 ###
 

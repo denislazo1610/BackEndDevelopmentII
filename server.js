@@ -18,14 +18,14 @@ var options = {
 // For parsing application/json
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send(`${port}`);
-});
+// app.get('/', (req, res) => {
+//   res.send(`${port}`);
+// });
 
 app
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options))
   .use('/index', require('./routes/index'))
-  .use('/contacts', require('./routes/contacts'));
+  .use('/', require('./routes/contacts'));
 
 app.listen(port, () => {
   console.log(`this is running on port ${port}`);

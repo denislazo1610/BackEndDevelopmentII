@@ -1,4 +1,4 @@
-const { getMaxListeners } = require('../DB/schemaContact');
+// const { getMaxListeners } = require('../DB/schemaContact');
 const contact = require('../DB/schemaContact');
 
 const gettingInfoContacts = (req, res) => {

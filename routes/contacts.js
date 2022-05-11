@@ -20,14 +20,14 @@ router.post('/', creatingNewContact);
 
 router.put('/:id', updatingContact);
 
-router.use(
-  '/',
-  (docData = (req, res) => {
-    let docData = {
-      documentationURL: `https://${port}/contacts`
-    };
-    res.send(docData);
-  })
-);
+// router.use(
+//   '/',
+//   (docData = (req, res) => {
+//     let docData = {
+//       documentationURL: `https://300/contacts`
+//     };
+//     res.send('lol');
+//   })
+// );
 
 module.exports = router;

@@ -16,7 +16,7 @@ router.get('/:id', gettingSingleContact);
 
 router.delete('/:id', deletingSingleContact);
 
-router.post('/', creatingNewContact);
+router.post('/contacts/', creatingNewContact);
 
 router.put('/:id', updatingContact);
 

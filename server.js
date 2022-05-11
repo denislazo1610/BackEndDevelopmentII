@@ -34,7 +34,7 @@ var options = {
 app
   .use(bodyParser.json())
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options))
-  .use('/', require('./routes/contacts'))
+  .use('/', require('./routes/index'))
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(

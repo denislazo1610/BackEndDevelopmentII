@@ -11,7 +11,7 @@ content-type: application/json
 {
     "firstName": "Prueba",
     "lastName": "Lopez",
-    "email": "denis@gmail.com",
+    "email": "denislazo",
     "favoriteColor": "Black",
     "birthday": "Unknown"
 }

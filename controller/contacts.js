@@ -1,5 +1,8 @@
 // const { getMaxListeners } = require('../DB/schemaContact');
 const contact = require('../DB/schemaContact');
+const Joi = require('@hapi/joi');
+var createError = require('http-errors');
+const { schemaContactValidation } = require('../DB/schemaValidation');
 
 const gettingInfoContacts = (req, res) => {
   contact.find().then((result) => {
@@ -22,7 +25,7 @@ const deletingSingleContact = (req, res) => {
   });
 };
 
-const creatingNewContact = (req, res) => {
+const creatingNewContact = (req, res, next) => {
   var newContacto = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -30,8 +33,16 @@ const creatingNewContact = (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
-  contact.insertMany(newContacto);
-  res.send(newContacto);
+
+  try {
+    const { value, error } = schemaContactValidation.validate(newContacto);
+
+    if (error) {
+      throw createError(404, 'Please, something is off');
+    }
+  } catch (error) {
+    next(error);
+  }
 };
 
 const updatingContact = (req, res) => {

@@ -12,10 +12,20 @@ const gettingInfoContacts = (req, res) => {
 
 const gettingSingleContact = (req, res, next) => {
   const id = req.params.id;
-
-  contact.findById(id).then((result) => {
-    !result ? next(createError(405, 'Not Contact found')) : res.send(result);
-  });
+  contact
+    .findById(id)
+    .then((result) => {
+      // !result ? next(createError(405, 'Not Contact found')) : res.send(result);
+      if (!result) {
+        throw createError(405, 'Not contact found');
+      } else {
+        res.send(result);
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({ message: error });
+      next(error);
+    });
 };
 
 const deletingSingleContact = (req, res) => {
@@ -38,6 +48,7 @@ const creatingNewContact = (req, res, next) => {
     contact.insertMany(newContacto);
     res.send(newContacto);
   } catch (error) {
+    res.status(500).json({ message: error });
     next(error);
   }
 };

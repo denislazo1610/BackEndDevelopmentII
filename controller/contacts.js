@@ -10,9 +10,11 @@ const gettingInfoContacts = (req, res) => {
   });
 };
 
-const gettingSingleContact = (req, res) => {
-  contact.findById(req.params.id).then((result) => {
-    res.send(result);
+const gettingSingleContact = (req, res, next) => {
+  const id = req.params.id;
+
+  contact.findById(id).then((result) => {
+    !result ? next(createError(405, 'Not Contact found')) : res.send(result);
   });
 };
 
@@ -26,33 +28,23 @@ const deletingSingleContact = (req, res) => {
 };
 
 const creatingNewContact = (req, res, next) => {
-  var newContacto = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
-  };
+  var newContacto = req.body;
 
   try {
     const { value, error } = schemaContactValidation.validate(newContacto);
 
-    if (error) {
-      throw createError(404, 'Please, something is off');
-    }
+    // If error exists from validation, then it will create an error with a message and its status
+    if (error) throw createError(405, 'Input invalid, check if you email is correct');
+    contact.insertMany(newContacto);
+    res.send(newContacto);
   } catch (error) {
     next(error);
   }
 };
 
 const updatingContact = (req, res) => {
-  var updatedContact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
-  };
+  var updatedContact = req.body;
+
   contact.findByIdAndUpdate(req.params.id, updatedContact, function () {
     console.log('Updated!');
   });

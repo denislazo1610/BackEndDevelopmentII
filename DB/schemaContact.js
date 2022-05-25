@@ -15,6 +15,6 @@ let contactSchema = new schema(
   }
 );
 
-const contact = mongoose.model('contact', contactSchema);
+let contact = mongoose.model('contact', contactSchema);
 
 module.exports = contact;

@@ -58,7 +58,13 @@ const deletingSingleContact = (req, res, next) => {
 };
 
 const creatingNewContact = (req, res, next) => {
-  var newContacto = req.body;
+  var newContacto = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
 
   try {
     const { value, error } = schemaContactValidation.validate(newContacto);
@@ -72,7 +78,13 @@ const creatingNewContact = (req, res, next) => {
 };
 
 const updatingContact = (req, res, next) => {
-  var updatedContact = req.body;
+  var updatedContact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
 
   try {
     const { value, error } = schemaContactValidation.validate(updatedContact);

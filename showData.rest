@@ -2,7 +2,7 @@
 GET http://localhost:3000/contacts
 
 ###
-GET http://localhost:3000/contacts/6279dee75409f73c3ca5d012
+GET http://localhost:3000/contacts/628f2e9f18d905c5533405b5
 
 
 ###
@@ -10,27 +10,27 @@ POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Susano" ,
+    "firstName": "Susano3" ,
     "lastName": "Lopez",
-    "email": "denislazo",
+    "email": "denislazo@gmail.com",
     "favoriteColor": "Black",
     "birthday": "Unknown"
 }
 
 ###
-PUT http://localhost:3000/contacts/627bcc671291ec849bd24088 HTTP/1.1
+PUT http://localhost:3000/contacts/628f2e9f18d905c5533405b5 HTTP/1.1
 content-type: application/json
 
 {
     "firstName": "Test",
     "lastName": "Lopez",
-    "email": "denis@gmail.com",
+    "email": "denislazo@hotmail.com",
     "favoriteColor": "Black",
     "birthday": "Unknown"
 }
 
 ###
-DELETE http://localhost:3000/contacts/626a30d54b82aa37ecae1325
+DELETE http://localhost:3000/contacts/628f2e9f18d905c5533405b5
 
 ###
 
